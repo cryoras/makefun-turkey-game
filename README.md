@@ -1,8 +1,11 @@
 # Gobble Run — Great Turkey Escape
 
+[![make.fun · turkey-run-game-01](https://make.fun/badge/turkey-run-game-01.svg)](https://make.fun/bounty/turkey-run-game-01?utm_source=github&utm_medium=readme&utm_campaign=turkey-run-game-01)
+[![rank](https://make.fun/badge/turkey-run-game-01/cryoras/makefun-turkey-game/rank.svg)](https://make.fun/bounty/turkey-run-game-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=turkey-run-game-01)
+[![reward](https://make.fun/badge/turkey-run-game-01/cryoras/makefun-turkey-game/reward.svg)](https://make.fun/bounty/turkey-run-game-01?utm_source=github&utm_medium=readme&utm_campaign=turkey-run-game-01)
+
 ![License: MIT](https://img.shields.io/badge/license-MIT-536d53)
 ![Node 22](https://img.shields.io/badge/node-22-bd4e21)
-![make.fun bounty](https://img.shields.io/badge/make.fun-bounty-d49c38)
 
 A little bird. A big getaway. An original 3D turkey runner through an autumn farmyard,
 a cluttered barn yard and a very hazardous kitchen. Dodge the dinner preparations,
