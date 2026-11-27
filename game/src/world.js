@@ -23,7 +23,7 @@ export class World{
   for(const e of this.entities){const gap=e.at-this.distance;if(e.done||gap>3||gap< -3)continue;const ex=e.type==='knife'?e.x+Math.sin(this.time*2.6+e.phase)*2.2:e.x;if(Math.abs(ex-this.x)> (e.type==='corn'||e.type==='feather'||e.type==='heart'?.85:1.02)||Math.abs(gap)> (e.type==='mud'?1.7:.85))continue;
    if(['corn','feather','heart'].includes(e.type)){if(this.y>2)continue;e.done=true;if(e.type==='corn'){this.corn++;this.farmer=clamp(this.farmer+.35,1,24);}if(e.type==='feather'){this.feathers++;this.tell('GOLDEN FEATHER · +150');}if(e.type==='heart'){this.lives=Math.min(3,this.lives+1);this.tell('A LITTLE EXTRA HEART');}this.sound('collect');}
    else if(e.type==='mud'){if(this.y<.4){this.slow=.8;e.done=true;this.tell('MUD! JUMP TO KEEP YOUR PACE');}}
-   else{const height={fence:1.05,hay:1.6,cart:1.85,oven:2.15,knife:1.5}[e.type];if(this.y<height){e.done=true;this.hit();}}
+   else{const height={fence:1.05,hay:1.6,cart:1.85,oven:2.15,knife:1.5,scissors:1.5}[e.type];if(this.y<height){e.done=true;this.hit();}}
   }
   if(this.distance>=FINISH&&this.mode==='playing')this.finish(true);
  }
