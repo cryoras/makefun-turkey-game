@@ -34,6 +34,21 @@ function hay(){const g=new T.Group();box(g,C.straw,0,.68,0,[1.85,1.36,1.45]);for
 function cart(){const g=new T.Group();box(g,0x845532,0,.73,0,[2.05,.26,2]);for(const x of [-1,1]){for(let j=0;j<3;j++)box(g,j%2?0xb2804d:0xa3703f,x,1+j*.24,0,[.12,.18,2]);for(const z of [-.65,.65]){const w=cyl(g,0x4f3927,x*1.13,.44,z,.43,.15,.43,12);w.rotation.z=Math.PI/2;const hub=cyl(g,0xc9a25f,x*1.23,.44,z,.13,.17);hub.rotation.z=Math.PI/2;}}const bale=hay();bale.scale.setScalar(.65);bale.position.y=.85;g.add(bale);return g;}
 function oven(){const g=new T.Group();box(g,0x57594c,0,1,0,[2.05,2,1.65]);box(g,0xd5c9a5,0,1.94,0,[2.14,.14,1.73]);box(g,0x302c25,0,.88,.845,[1.66,1.25,.07]);box(g,0xef6c24,0,.85,.89,[1.35,.87,.025]);box(g,0xffc75a,0,.7,.91,[1.08,.48,.02]);for(let i=0;i<4;i++){ball(g,0xff9b32,(i-1.5)*.25,.96,.93,[.12,.24,.02]);cyl(g,0x33352d,(i-1.5)*.45,2.035,0,.17,.05);}box(g,0x2d342e,0,1.45,.99,[1.45,.1,.13]);for(let i=0;i<3;i++)box(g,0xedd8a4,(i-1)*.45,1.77,.85,[.12,.12,.05]);return g;}
 function knife(){const g=new T.Group();box(g,0x65422e,-.65,0,0,[.7,.17,.19]);box(g,0xd6e2d7,.2,0,0,[1.1,.09,.35]);const tip=mesh(g,new T.ConeGeometry(.2,.4,3),0xf5eed7,.9,0,0);tip.rotation.z=-Math.PI/2;box(g,0xe5bc70,-.3,0,0,[.09,.23,.27]);return g;}
+// Separate baked parts share four instanced draws for every visible trap.
+function scissors(){
+ const ground=new T.Group(),arm=new T.Group(),pivot=new T.Group();
+ mesh(ground,new T.SphereGeometry(1,10,4),0x805232,0,-.03,0,[1.08,.23,.72]);
+ const slit=mesh(ground,new T.CircleGeometry(1,10),0x38291e,0,.18,0,[.8,.32,1]);slit.rotation.x=-Math.PI/2;
+ for(const side of [-1,1]){const crack=box(ground,0x38291e,side*.67,.17,side*.16,[.65,.025,.08]);crack.rotation.y=side*.45;}
+ const blade=new T.Shape();blade.moveTo(-.13,-.08);blade.lineTo(.14,-.08);blade.lineTo(.12,.78);blade.lineTo(0,1.17);blade.lineTo(-.13,.74);blade.closePath();
+ mesh(arm,new T.ExtrudeGeometry(blade,{depth:.075,bevelEnabled:false}),0xc6d9de,0,0,-.04);
+ box(arm,0xf5f4df,-.075,.38,.045,[.035,.82,.018]);
+ box(arm,0xe45425,0,-.25,0,[.18,.4,.14]);
+ mesh(arm,new T.TorusGeometry(.27,.095,5,12),0xe45425,0,-.56,0,[1,1.15,1]);
+ const pin=cyl(pivot,0xffc75a,0,0,.12,.13,.18,undefined,10);pin.rotation.x=Math.PI/2;
+ for(const part of [ground,arm,pivot])bake(part);
+ return {ground,arm,pivot};
+}
 function collectible(type){const g=new T.Group();if(type==='corn'){const cob=ball(g,0xf2bf36,0,0,0,[.21,.44,.2]);cob.rotation.z=-.3;const l=ball(g,0x6d853c,-.14,-.23,.03,[.13,.34,.1]);l.rotation.z=.6;}else if(type==='feather'){const f=ball(g,0xfbc24f,0,0,0,[.19,.61,.08]);f.rotation.z=-.45;box(g,0xffe8a4,0,0,.07,[.025,1,.025]).rotation.z=-.45;}else{ball(g,0xc94c37,-.15,.12,0,[.22,.23,.12]);ball(g,0xc94c37,.15,.12,0,[.22,.23,.12]);mesh(g,new T.ConeGeometry(.31,.46,4),0xc94c37,0,-.12,0).rotation.z=Math.PI;}return g;}
 function barn(){const g=new T.Group();box(g,0xa93226,0,2,0,[6,4,8]);const roofGeo=new T.BufferGeometry();roofGeo.setAttribute('position',new T.Float32BufferAttribute([-3.5,4,-4.5,3.5,4,-4.5,0,6.5,-4.5,-3.5,4,4.5,3.5,4,4.5,0,6.5,4.5],3));roofGeo.setIndex([0,2,1,3,4,5,0,3,5,0,5,2,2,5,4,2,4,1,0,1,4,0,4,3]);roofGeo.computeVertexNormals();mesh(g,roofGeo,0x63472f);box(g,0x603c28,0,1.35,4.03,[2.8,2.7,.1]);for(const x of [-1.45,1.45])box(g,0xffedcf,x,1.5,4.13,[.14,3,.1]);box(g,0xffedcf,0,3,4.13,[3,.14,.1]);for(let x=-2.7;x<3;x+=.5)box(g,0xc15b36,x,2,4.07,[.04,3.8,.03]);for(const s of [-1,1]){const b=box(g,0xffedcf,s*.69,1.5,4.16,[.11,3.2,.08]);b.rotation.z=s*.42;}return g;}
 export class Renderer3D{
@@ -78,7 +93,30 @@ export class Renderer3D{
   if(staged){const aspect=innerWidth/innerHeight;this.camera.position.set(9,5.6,16);this.camera.lookAt(-.9,1.85,-1);this.bird.visible=true;this.bird.position.set(3.3,end?2.4:0,0);this.bird.scale.setScalar(title?1.8:1.1);this.bird.rotation.set(0,title?-.5+t*.19:-.25,end?.25:0);this.chaser.visible=end&&!w.won;this.chaser.position.set(3.1,0,-.3);this.chaser.scale.setScalar(1.65);this.chaser.rotation.y=-.25;animateTurkey(this.bird,t,false);animateFarmer(this.chaser,t,true);this.birdShadow.position.set(3.3,.04,0);this.birdShadow.scale.setScalar(1.6);this.farmerShadow.visible=false;if(end&&w.won){this.bird.position.set(3.3,0,0);this.bird.rotation.y=-.6;this.bird.scale.setScalar(1.8);}if(aspect<1)this.camera.position.x=12;
   }else{this.camera.position.set(0,6.4,15.5);this.camera.lookAt(0,1.6,-15);this.bird.position.set(w.x,w.y,2);this.bird.rotation.set(0,Math.PI,-clamp((w.targetX-w.x)*.05,-.2,.2));this.bird.scale.setScalar(1.22);this.bird.visible=!(w.invulnerable>0&&Math.floor(t*12)%2===0);animateTurkey(this.bird,t,true);this.chaser.visible=true;const fz=3.5+w.farmer*.24,fx=w.x+clamp((w.targetX-w.x)*.15,-.35,.35);this.chaser.position.set(fx,0,fz);this.chaser.scale.setScalar(1);this.chaser.rotation.y=Math.PI;animateFarmer(this.chaser,t);this.birdShadow.position.set(w.x,.04,2);this.birdShadow.scale.setScalar(1-w.y*.13);this.farmerShadow.visible=true;this.farmerShadow.position.set(this.chaser.position.x,.04,fz);}
   const near=w.entities.filter(e=>!staged&&!e.done&&e.at>w.distance-10&&e.at<w.distance+105);const counts=new Map();
-  for(const e of near){let batch=this.entityBatches.get(e.type);if(!batch){const template=this.makeEntity(e);let source;template.traverse(o=>{if(o.isMesh)source=o;});this.scene.remove(template);batch=new T.InstancedMesh(source.geometry,source.material,96);batch.instanceMatrix.setUsage(T.DynamicDrawUsage);batch.frustumCulled=false;this.scene.add(batch);this.entityBatches.set(e.type,batch);}
+  for(const e of near){
+   if(e.type==='scissors'){
+    if(!this.entityBatches.has('scissors-ground')){
+     const parts=scissors();
+     for(const [name,part] of [['ground',parts.ground],['left',parts.arm],['right',parts.arm],['pivot',parts.pivot]]){
+      const source=part.children.find(o=>o.isMesh),batch=new T.InstancedMesh(source.geometry,source.material,96);
+      batch.instanceMatrix.setUsage(T.DynamicDrawUsage);batch.frustumCulled=false;this.scene.add(batch);this.entityBatches.set('scissors-'+name,batch);
+     }
+    }
+    // Mound is visible from the horizon. Rise completes 18 m before contact,
+    // leaving at least 0.8 s even at kitchen dash speed (22.4 m/s).
+    const gap=e.at-w.distance,rise=clamp((36-gap)/18,0,1),lift=rise*rise*(3-2*rise);
+    const opening=.08+.49*(.5+.5*Math.sin(w.time*6+e.phase));
+    for(const name of ['ground','left','right','pivot']){
+     if(name!=='ground'&&rise===0)continue;
+     const d=this.entityDummy,key='scissors-'+name;
+     d.position.set(e.x,name==='ground'?0:-2.1+2.82*lift,2-gap);
+     d.rotation.set(0,0,name==='left'?opening:name==='right'?-opening:0);d.scale.setScalar(1);
+     if(name==='right')d.position.z+=.09;
+     d.updateMatrix();const count=counts.get(key)||0;this.entityBatches.get(key).setMatrixAt(count,d.matrix);counts.set(key,count+1);
+    }
+    continue;
+   }
+   let batch=this.entityBatches.get(e.type);if(!batch){const template=this.makeEntity(e);let source;template.traverse(o=>{if(o.isMesh)source=o;});this.scene.remove(template);batch=new T.InstancedMesh(source.geometry,source.material,96);batch.instanceMatrix.setUsage(T.DynamicDrawUsage);batch.frustumCulled=false;this.scene.add(batch);this.entityBatches.set(e.type,batch);}
    const d=this.entityDummy;d.position.set(e.type==='knife'?e.x+Math.sin(w.time*2.6+e.phase)*2.2:e.x,0,2-(e.at-w.distance));d.rotation.set(0,0,0);d.scale.setScalar(1);if(['corn','heart','feather'].includes(e.type)){d.position.y=1.1+Math.sin(t*3+e.id)*.12;d.rotation.y=t*.9+e.id;}if(e.type==='knife'){d.position.y=1.2+Math.sin(t*3)*.15;d.rotation.y=t*2;d.rotation.z=Math.sin(t*3)*.2;}d.updateMatrix();const count=counts.get(e.type)||0;batch.setMatrixAt(count,d.matrix);counts.set(e.type,count+1);
   }
   for(const [type,batch] of this.entityBatches){batch.count=counts.get(type)||0;batch.visible=batch.count>0;batch.instanceMatrix.needsUpdate=true;}
