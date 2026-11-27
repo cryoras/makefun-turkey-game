@@ -1,0 +1,92 @@
+{
+  "checks": [
+    {
+      "name": "Staged start PNG pair byte-identical + unchanged from 39ad90c"
+    },
+    {
+      "name": "Staged play PNG pair byte-identical + unchanged from 39ad90c"
+    },
+    {
+      "name": "Staged chase PNG pair byte-identical + unchanged from 39ad90c"
+    },
+    {
+      "name": "Staged end PNG pair byte-identical + unchanged from 39ad90c"
+    },
+    {
+      "name": "Title has no visible impact"
+    },
+    {
+      "name": "Hit-stop: 4% for 85ms, recovery to 100% by 190ms",
+      "detail": [
+        0.04,
+        0.04,
+        0.04,
+        0.52,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Mud does not trigger damage impact"
+    },
+    {
+      "name": "Invulnerability rejects impact"
+    },
+    {
+      "name": "Real frame collision: rasterized rays/dots + word + shake/zoom visible",
+      "detail": {
+        "lines": "1",
+        "zoom": 1.0626086956521739,
+        "caption": {
+          "x": 486.34320068359375,
+          "y": 350.5227966308594,
+          "width": 307.3135986328125,
+          "height": 182.14187622070312,
+          "top": 350.5227966308594,
+          "right": 793.6567993164062,
+          "bottom": 532.6646728515625,
+          "left": 486.34320068359375
+        }
+      }
+    },
+    {
+      "name": "Effect clears naturally after 640ms"
+    },
+    {
+      "name": "Pause clears effect"
+    },
+    {
+      "name": "Restart clears effect and hit-stop"
+    },
+    {
+      "name": "Lethal collision also punctuated + cleaned"
+    },
+    {
+      "name": "Reduced motion disables shake/zoom"
+    }
+  ],
+  "hashes": {
+    "start": {
+      "hash": "e5a17588489ff0b6e0e41f03677841386e39a666a64b9b0a72d684b72b4a8963",
+      "pairIdentical": true,
+      "unchangedFromBase": true
+    },
+    "play": {
+      "hash": "1d531322d63d29a4b628287a825a2ae0ad09d7a52fa6240adf45b9e3a654f96c",
+      "pairIdentical": true,
+      "unchangedFromBase": true
+    },
+    "chase": {
+      "hash": "b9fbd4f0534a53837f6f2f7fedca49a95b5bb977b10ffbada7fa7eea83112008",
+      "pairIdentical": true,
+      "unchangedFromBase": true
+    },
+    "end": {
+      "hash": "0415c46393964a97cecc79c2c0441901322505af5c4a9a46554f9e35d8fca422",
+      "pairIdentical": true,
+      "unchangedFromBase": true
+    }
+  },
+  "errors": [],
+  "external": []
+}

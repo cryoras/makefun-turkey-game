@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "name": "10-second SwiftShader baseline",
+      "detail": {
+        "frames": 94,
+        "durationMs": 10182.9,
+        "fps": 9.231162046175452,
+        "p95Ms": 200,
+        "maxMs": 216.80000000000018,
+        "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "renderer3d": true,
+        "stats": {
+          "calls": 43,
+          "triangles": 21753,
+          "renderMs": 2.099999999627471,
+          "pixelRatio": 0.25
+        },
+        "crashes": 6,
+        "drawTimesMs": []
+      }
+    },
+    {
+      "name": "Zero console/page errors + external requests"
+    }
+  ],
+  "hashes": {},
+  "perfBaseline": {
+    "frames": 94,
+    "durationMs": 10182.9,
+    "fps": 9.231162046175452,
+    "p95Ms": 200,
+    "maxMs": 216.80000000000018,
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "renderer3d": true,
+    "stats": {
+      "calls": 43,
+      "triangles": 21753,
+      "renderMs": 2.099999999627471,
+      "pixelRatio": 0.25
+    },
+    "crashes": 6,
+    "drawTimesMs": []
+  },
+  "perf": null,
+  "errors": [],
+  "external": []
+}
