@@ -3,7 +3,7 @@ import {random} from './random.js';
 export class World{
  constructor(seed=1,sound=()=>{}){this.seed=seed;this.sound=sound;this.best=0;try{this.best=+localStorage.getItem('gobble-run-best')||0;}catch{}this.reset();this.mode='title';}
  reset(){Object.assign(this,{mode:'playing',distance:0,time:0,x:0,targetX:0,y:0,vy:0,lives:3,corn:0,feathers:0,zone:0,zoneBonus:0,speed:8,farmer:12,dashTime:0,dashCooldown:0,slow:0,invulnerable:0,hits:0,event:'',eventTime:0,bannerTime:0,won:false,justAction:false});this.entities=[];this.rng=random(this.seed);let id=0;
-  for(let at=22;at<FINISH+30;){const zone=Math.min(2,Math.floor(at/500));const open=Math.floor(this.rng()*3);const types=zone===0?['fence','hay','mud']:zone===1?['cart','hay','fence','mud']:['oven','knife','cart','mud'];
+  for(let at=22;at<FINISH+30;){const zone=Math.min(2,Math.floor(at/500));const open=Math.floor(this.rng()*3);const types=zone===0?['fence','hay','mud','scissors']:zone===1?['cart','hay','fence','mud','scissors']:['oven','knife','cart','mud','scissors'];
    for(let lane=0;lane<3;lane++){if(lane!==open&&(this.rng()<.7+zone*.1))this.entities.push({id:id++,type:types[Math.floor(this.rng()*types.length)],lane,x:LANES[lane],at,phase:this.rng()*6.28,done:false});}
    for(let j=0;j<4;j++)this.entities.push({id:id++,type:'corn',lane:open,x:LANES[open],at:at+3+j*2,done:false});
    let rare=this.rng();if(rare<.08)this.entities.push({id:id++,type:'heart',x:LANES[open],lane:open,at:at+12,done:false});else if(rare<.25)this.entities.push({id:id++,type:'feather',x:LANES[open],lane:open,at:at+12,done:false});
