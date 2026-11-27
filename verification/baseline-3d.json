@@ -1,0 +1,14 @@
+{
+  "fps": 5.590886854427284,
+  "p95": 316.59999999999945,
+  "max": 366.60000000000036,
+  "over100": 48,
+  "renderer3d": true,
+  "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "stats": {
+    "calls": 237,
+    "triangles": 115088,
+    "renderMs": 3.3999999999068677,
+    "pixelRatio": 0.25
+  }
+}

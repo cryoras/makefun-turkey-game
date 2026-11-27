@@ -1,0 +1,574 @@
+{
+  "phase": "final",
+  "perf": {
+    "frames": 108,
+    "duration": 10082.900000000001,
+    "fps": 10.711204117862914,
+    "p95": 183.3000000000011,
+    "max": 266.60000000000036,
+    "over100": 31,
+    "histogram": {
+      "0-20": 8,
+      "20-35": 13,
+      "35-50": 1,
+      "50-100": 55,
+      ">100": 31
+    },
+    "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "renderer3d": true,
+    "stats": {
+      "calls": 47,
+      "triangles": 26056,
+      "renderMs": 0.900000000372529,
+      "pixelRatio": 0.25
+    }
+  },
+  "stall": {
+    "steps": 5,
+    "maxDt": 0.016666666666666666,
+    "totalDt": 0.08333333333333333
+  },
+  "hashes": {
+    "start": {
+      "hash": "b97430927bd99fd822e5b62805ba1e859893ef84101b2260cc0b42fbda99167c",
+      "identical": true
+    },
+    "play": {
+      "hash": "e5a6450cd7382db41115cb7e2ffd6136a246ebe3eca0cb2b391bd043fd1ea93c",
+      "identical": true
+    },
+    "chase": {
+      "hash": "3c9e7a836842cfd3db32b37a255b1d89ab501f1ae59b6f77d4c75e6c27706116",
+      "identical": true
+    },
+    "end": {
+      "hash": "d6aa6d0f35a4c70220fd8aa398e9a5c69aa4d418a7692d91bb1b6087dde1e2a6",
+      "identical": true
+    }
+  },
+  "lanes": [
+    {
+      "zone": 0,
+      "x": -2.8,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    },
+    {
+      "zone": 0,
+      "x": 0,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    },
+    {
+      "zone": 0,
+      "x": 2.8,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    },
+    {
+      "zone": 1,
+      "x": -2.8,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    },
+    {
+      "zone": 1,
+      "x": 0,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    },
+    {
+      "zone": 1,
+      "x": 2.8,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    },
+    {
+      "zone": 2,
+      "x": -2.8,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    },
+    {
+      "zone": 2,
+      "x": 0,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    },
+    {
+      "zone": 2,
+      "x": 2.8,
+      "points": [
+        {
+          "x": 561.5095410737053,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 598.8839272206741,
+          "y": 405.40307352058664
+        },
+        {
+          "x": 718.4904589262947,
+          "y": 577.4144297069067
+        },
+        {
+          "x": 681.1160727793259,
+          "y": 405.40307352058664
+        }
+      ]
+    }
+  ],
+  "laneDrift": 0,
+  "scenery": [
+    {
+      "distance": 0,
+      "environment": 0,
+      "kitchen": 0,
+      "barn": 0,
+      "tileLocal": -210,
+      "tileWorld": -210
+    },
+    {
+      "distance": 1,
+      "environment": 1,
+      "kitchen": 1,
+      "barn": 1,
+      "tileLocal": -210,
+      "tileWorld": -209
+    },
+    {
+      "distance": 2,
+      "environment": 2,
+      "kitchen": 2,
+      "barn": 2,
+      "tileLocal": -210,
+      "tileWorld": -208
+    },
+    {
+      "distance": 3,
+      "environment": 3,
+      "kitchen": 3,
+      "barn": 3,
+      "tileLocal": -210,
+      "tileWorld": -207
+    },
+    {
+      "distance": 4,
+      "environment": 4,
+      "kitchen": 4,
+      "barn": 4,
+      "tileLocal": -210,
+      "tileWorld": -206
+    },
+    {
+      "distance": 5,
+      "environment": 5,
+      "kitchen": 5,
+      "barn": 5,
+      "tileLocal": -210,
+      "tileWorld": -205
+    },
+    {
+      "distance": 6,
+      "environment": 6,
+      "kitchen": 6,
+      "barn": 6,
+      "tileLocal": -210,
+      "tileWorld": -204
+    },
+    {
+      "distance": 7,
+      "environment": 7,
+      "kitchen": 7,
+      "barn": 7,
+      "tileLocal": -210,
+      "tileWorld": -203
+    },
+    {
+      "distance": 8,
+      "environment": 8,
+      "kitchen": 8,
+      "barn": 8,
+      "tileLocal": -210,
+      "tileWorld": -202
+    },
+    {
+      "distance": 9,
+      "environment": 9,
+      "kitchen": 9,
+      "barn": 9,
+      "tileLocal": -210,
+      "tileWorld": -201
+    },
+    {
+      "distance": 10,
+      "environment": 10,
+      "kitchen": 10,
+      "barn": 10,
+      "tileLocal": -210,
+      "tileWorld": -200
+    },
+    {
+      "distance": 11,
+      "environment": 11,
+      "kitchen": 11,
+      "barn": 11,
+      "tileLocal": -210,
+      "tileWorld": -199
+    },
+    {
+      "distance": 12,
+      "environment": 12,
+      "kitchen": 12,
+      "barn": 12,
+      "tileLocal": -210,
+      "tileWorld": -198
+    },
+    {
+      "distance": 13,
+      "environment": 13,
+      "kitchen": 13,
+      "barn": 13,
+      "tileLocal": -210,
+      "tileWorld": -197
+    },
+    {
+      "distance": 14,
+      "environment": 14,
+      "kitchen": 14,
+      "barn": 14,
+      "tileLocal": -210,
+      "tileWorld": -196
+    },
+    {
+      "distance": 15,
+      "environment": 15,
+      "kitchen": 15,
+      "barn": 15,
+      "tileLocal": -210,
+      "tileWorld": -195
+    },
+    {
+      "distance": 16,
+      "environment": 16,
+      "kitchen": 16,
+      "barn": 16,
+      "tileLocal": -210,
+      "tileWorld": -194
+    },
+    {
+      "distance": 17,
+      "environment": 17,
+      "kitchen": 17,
+      "barn": 17,
+      "tileLocal": -210,
+      "tileWorld": -193
+    },
+    {
+      "distance": 18,
+      "environment": 18,
+      "kitchen": 18,
+      "barn": 18,
+      "tileLocal": -210,
+      "tileWorld": -192
+    },
+    {
+      "distance": 19,
+      "environment": 19,
+      "kitchen": 19,
+      "barn": 19,
+      "tileLocal": -210,
+      "tileWorld": -191
+    },
+    {
+      "distance": 20,
+      "environment": 20,
+      "kitchen": 20,
+      "barn": 20,
+      "tileLocal": -210,
+      "tileWorld": -190
+    },
+    {
+      "distance": 21,
+      "environment": 21,
+      "kitchen": 21,
+      "barn": 21,
+      "tileLocal": -210,
+      "tileWorld": -189
+    },
+    {
+      "distance": 22,
+      "environment": 22,
+      "kitchen": 22,
+      "barn": 22,
+      "tileLocal": -210,
+      "tileWorld": -188
+    },
+    {
+      "distance": 23,
+      "environment": 23,
+      "kitchen": 23,
+      "barn": 23,
+      "tileLocal": -210,
+      "tileWorld": -187
+    },
+    {
+      "distance": 24,
+      "environment": 24,
+      "kitchen": 24,
+      "barn": 24,
+      "tileLocal": -210,
+      "tileWorld": -186
+    },
+    {
+      "distance": 25,
+      "environment": 25,
+      "kitchen": 25,
+      "barn": 25,
+      "tileLocal": -210,
+      "tileWorld": -185
+    },
+    {
+      "distance": 26,
+      "environment": 26,
+      "kitchen": 26,
+      "barn": 26,
+      "tileLocal": -210,
+      "tileWorld": -184
+    },
+    {
+      "distance": 27,
+      "environment": 27,
+      "kitchen": 27,
+      "barn": 27,
+      "tileLocal": -210,
+      "tileWorld": -183
+    },
+    {
+      "distance": 28,
+      "environment": 28,
+      "kitchen": 28,
+      "barn": 28,
+      "tileLocal": -210,
+      "tileWorld": -182
+    },
+    {
+      "distance": 29,
+      "environment": 29,
+      "kitchen": 29,
+      "barn": 29,
+      "tileLocal": -210,
+      "tileWorld": -181
+    },
+    {
+      "distance": 30,
+      "environment": 30,
+      "kitchen": 30,
+      "barn": 30,
+      "tileLocal": -210,
+      "tileWorld": -180
+    },
+    {
+      "distance": 209.9,
+      "environment": 209.9,
+      "kitchen": 83.9,
+      "barn": 89.9,
+      "tileLocal": -210,
+      "tileWorld": -0.09999999999999432
+    },
+    {
+      "distance": 210,
+      "environment": 0,
+      "kitchen": 84,
+      "barn": 90,
+      "tileLocal": -210,
+      "tileWorld": -210
+    },
+    {
+      "distance": 210.1,
+      "environment": 0.09999999999999432,
+      "kitchen": 84.1,
+      "barn": 90.1,
+      "tileLocal": -210,
+      "tileWorld": -209.9
+    },
+    {
+      "distance": 419.9,
+      "environment": 209.89999999999998,
+      "kitchen": 41.89999999999998,
+      "barn": 59.89999999999998,
+      "tileLocal": -210,
+      "tileWorld": -0.10000000000002274
+    },
+    {
+      "distance": 420,
+      "environment": 0,
+      "kitchen": 42,
+      "barn": 60,
+      "tileLocal": -210,
+      "tileWorld": -210
+    }
+  ],
+  "seamChecks": [
+    {
+      "zone": 0,
+      "period": 210,
+      "visibleVertices": 22747,
+      "continuous": true
+    },
+    {
+      "zone": 1,
+      "period": 120,
+      "visibleVertices": 9576,
+      "continuous": true
+    },
+    {
+      "zone": 2,
+      "period": 126,
+      "visibleVertices": 52290,
+      "continuous": true
+    }
+  ],
+  "checks": {
+    "sceneryContinuous": true,
+    "renderer3d": true,
+    "p95Under50": false,
+    "noFrameOver100": false,
+    "clampedSteps": true,
+    "laneDriftUnder2px": true,
+    "sceneryTileLocal": true,
+    "deterministic": true,
+    "noErrors": true,
+    "noExternal": true
+  },
+  "errors": [],
+  "external": []
+}
