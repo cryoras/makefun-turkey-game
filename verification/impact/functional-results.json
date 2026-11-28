@@ -39,12 +39,12 @@
         "zoom": 1.0626086956521739,
         "caption": {
           "x": 486.34320068359375,
-          "y": 350.5227966308594,
+          "y": 228.22593688964844,
           "width": 307.3135986328125,
-          "height": 182.14187622070312,
-          "top": 350.5227966308594,
+          "height": 182.1418914794922,
+          "top": 228.22593688964844,
           "right": 793.6567993164062,
-          "bottom": 532.6646728515625,
+          "bottom": 410.3678283691406,
           "left": 486.34320068359375
         }
       }
@@ -72,17 +72,17 @@
       "unchangedFromBase": true
     },
     "play": {
-      "hash": "1d531322d63d29a4b628287a825a2ae0ad09d7a52fa6240adf45b9e3a654f96c",
+      "hash": "7900a10bd104e431710bfde9073d1020bbc786ff81d3e2592006878fa388cd14",
       "pairIdentical": true,
       "unchangedFromBase": true
     },
     "chase": {
-      "hash": "b9fbd4f0534a53837f6f2f7fedca49a95b5bb977b10ffbada7fa7eea83112008",
+      "hash": "91a6b076bbe11065a7f8a6f5c33e2511066cb7992c73792675800b0c2877efa2",
       "pairIdentical": true,
       "unchangedFromBase": true
     },
     "end": {
-      "hash": "0415c46393964a97cecc79c2c0441901322505af5c4a9a46554f9e35d8fca422",
+      "hash": "c4fe40c4311d596c622cf0a1e0c05d1c15065cc1027402557804a2684079bc3a",
       "pairIdentical": true,
       "unchangedFromBase": true
     }
